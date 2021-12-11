@@ -187,30 +187,10 @@ function SetCookie (name, value, expireDate) {
 				<a href="#" class="sidebar_close_btn" onclick="closeSidebar()">&times;</a>
 				<div id="menu_wrap" class="bg_white">
 				<b style="font-size: 20px; color:rgb(43, 203, 140);">즐겨찾기</b><br>
-				<button type="submit" class="cookiebutton" onclick="displayPlaces(); return false;">길찾기</button>
-				<button type="submit" class="cookiebutton" onclick="DelCookie(); return false;">즐겨찾기 삭제</button>
+				
 			</div>
 
-			<script>
-				function AddCookie()
-				{
-					var strX=document.cookie("strX").value;
-					var strY=document.cookie("strY").value;
-					var endX=document.cookie("dstX").value;
-					var endY=document.cookie("dstY").value;
-					SetCookie(strX, strY, endX, endY, null);
-				}
-				function DelCookie(){
-					var strX=document.cookie("strX").value;
-					var strY=document.cookie("strY").value;
-					var endX=document.cookie("dstX").value;
-					var endY=document.cookie("dstY").value;
-					SetCookie(strX, strY, endX, endY, 0);
-				}
-				function getCookie(){
-				
-				}
-			</script>
+			
 		</div>	
 		<div id ="subSidebar_4" class ="subSidebar">
 			<div class="contents">
