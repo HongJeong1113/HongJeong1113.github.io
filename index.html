@@ -16,23 +16,7 @@
 	<script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=l7xx7b7144d6b822440c89d5008ebeb3fd17"></script>
 	<script
 		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=66583dec16d8abc21e4a6f52204c826a&libraries=clusterer,services"></script>
-		<script>
-		function GetCookie (name) {
-    var pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
-    for(var i=0; i<pairs.length; i++) {
-        var pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
-        var unit = pair.split("=");
-        if(unit[0] == name)
-            return unescape(unit[1]);
-    }
-    return null;
-}
-function SetCookie (name, value, expireDate) {
-    var cookieStr = name + "=" + escape(value) +
-        ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
-        document.cookie = cookieStr;
-}
-</script>
+		
 </head>
 
 <body>
