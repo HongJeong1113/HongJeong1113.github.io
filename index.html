@@ -16,7 +16,6 @@
 	<script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=l7xx7b7144d6b822440c89d5008ebeb3fd17"></script>
 	<script
 		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=66583dec16d8abc21e4a6f52204c826a&libraries=clusterer,services"></script>
-		
 </head>
 
 <body>
@@ -80,14 +79,14 @@
 				<div class="menu" onclick="openSubSidebar(3)"
 					onmouseover="this.children[0].src='assets/bookmark_white.png'"
 					onmouseout="this.children[0].src='assets/bookmark_green.png'">
-					<img src="assets/bookmark_green.png" alt="즐겨찾기">
-					즐겨찾기
+					<img src="assets/bookmark_green.png" alt="이전 기록">
+					이전 기록
 				</div>
 				<div class="menu" onclick="openSubSidebar(4)"
-					onmouseover="this.children[0].src='assets/call_white.png'"
-					onmouseout="this.children[0].src='assets/call_green.png'">
-					<img src="assets/call_green.png" alt="전화및문자">
-					전화및문자
+					onmouseover="this.children[0].src='assets/more_white.png'"
+					onmouseout="this.children[0].src='assets/more_green.png'">
+					<img src="assets/more_green.png" alt="더보기">
+					더보기
 				</div>
 			</div>
 		</div>
@@ -116,12 +115,8 @@
 							<button type="button" class="searchbutton" onclick="selectMarkers(); return false;">경유지</button>
 							<!--길찾기를 실행할 버튼-->
 							<button type='button' class="searchbutton" onclick='letpede(); return false;'>길찾기</button>
-							<!--즐찾-->
-							<button type='button' class="searchbutton" onclick="AddCookie();alert('선택하실 출발지와 목적지를 저장합니다')">즐겨찾기</button>
 						</div>
-						<script>
-						var 
-						</script>
+	
 						<br>
 	
 						<div id="strnm" style="font: size 14px; font-weight: bold; color: rgb(43, 203, 140);">
@@ -169,16 +164,6 @@
 		<div id ="subSidebar_3" class ="subSidebar">
 			<div class="contents">
 				<a href="#" class="sidebar_close_btn" onclick="closeSidebar()">&times;</a>
-				<div id="menu_wrap" class="bg_white">
-				<b style="font-size: 20px; color:rgb(43, 203, 140);">즐겨찾기</b><br>
-				
-			</div>
-
-			
-		</div>	
-		<div id ="subSidebar_4" class ="subSidebar">
-			<div class="contents">
-				<a href="#" class="sidebar_close_btn" onclick="closeSidebar()">&times;</a>
 				<!-- 비상 연락처 설정 -->
 				<form class="pathsearch">
 					<div style="float: left; margin-bottom: 5px;">
@@ -206,7 +191,7 @@
 					</div>									
 				</form>
 			</div>
-		</div>
+		</div>	
 
 		<!--받아온 좌표 값을 임시로 저장 해 둘 hidden divs-->
 		<div id="placenm" style='height: 0px; opacity: 0;'>
@@ -288,7 +273,19 @@
         // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
         var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
-		
+		// 인트로 에니메이션
+		setTimeout(function(){
+			var intro = document.getElementById("intro");
+			var intro_opacity = 1;
+			var intro_timer = setInterval(function(){
+			intro_opacity -= 0.01;
+			intro.style.opacity = intro_opacity;
+			if(intro_opacity <= 0){
+				clearInterval(intro_timer);
+				intro.style.display = "none";
+			}
+		}, 10);
+		}, 1000);
 
 		// 마커 정보창 끄고 닫기 함수
 		function mouseOverListener(map, marker, infoWindow) {
@@ -331,7 +328,6 @@
             console.log(endX)
             console.log(endY)
         };
-        
 
 		var CCTV_markers = [];
 		var police_markers = [];
