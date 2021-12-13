@@ -27,9 +27,9 @@
     		}
     		return null;
 		}
-		function SetCookie (name, value, expireDate) {
-   			 var cookieStr = name + "=" + escape(value) +
-      		  ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
+		function SetCookie (name, value) {
+   			 var cookieStr = name + "=" + escape(value);
+      		  
      		   document.cookie = cookieStr;
 			}
 </script>
@@ -198,13 +198,13 @@
 				
 				function AddCookie(name)//쿠키생성
 				{
-					expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
-					SetCookie("startnm",startnm,expire);
-					SetCookie("startX",startX,expire);
-					SetCookie("startY",startY,expire);
-					SetCookie("endnm",endnm,expire);
-					SetCookie("endX",endX,expire);
-					SetCookie("endY",endY,expire);
+					
+					SetCookie("startnm",startnm);
+					SetCookie("startX",startX);
+					SetCookie("startY",startY);
+					SetCookie("endnm",endnm);
+					SetCookie("endX",endX);
+					SetCookie("endY",endY);
 
 				}
 				function DelCookie(name)//쿠키삭제
@@ -265,7 +265,7 @@
 		<div id="coordinateX" style='height: 0px; opacity: 0;'>
 			X좌표 값
 		</div>
-		<div id="coordinateY" style='height: 0px; opacity: 0;'>
+		<div id="Ycoordinate" style='height: 0px; opacity: 0;'>
 			Y좌표 값
 		</div>
 		
